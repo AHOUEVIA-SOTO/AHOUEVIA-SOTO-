@@ -1,0 +1,62 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+export default function AhoueviaSotoSite() {
+  return (
+    <div className="min-h-screen bg-[#1a1a1a] text-white p-6 space-y-12">
+      <header className="text-center">
+        <h1 className="text-4xl font-bold">AHOUEVIÃ SOTO</h1>
+        <p className="text-lg mt-2 italic">L’essence du goût authentique</p>
+      </header>
+
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { name: "Classique", price: "5 000 FCFA" },
+          { name: "Épicé aphrodisiaque", price: "5 000 FCFA" },
+          { name: "Whisky crème", price: "7 000 FCFA" },
+          { name: "Sauvage forêt", price: "5 000 FCFA" },
+          { name: "Mystique fumé", price: "5 000 FCFA" },
+          { name: "Raffiné boisé", price: "5 000 FCFA" },
+        ].map((item) => (
+          <Card key={item.name} className="bg-[#2a2a2a] border-none">
+            <CardContent className="p-4">
+              <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
+              <p className="text-yellow-400 font-bold mb-4">{item.price}</p>
+              <Button className="w-full bg-yellow-600 hover:bg-yellow-700">Commander</Button>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
+
+      <section className="text-center">
+        <h2 className="text-2xl font-semibold mb-4">Inscription à la newsletter</h2>
+        <div className="flex justify-center gap-2">
+          <Input type="email" placeholder="Entrez votre e-mail" className="max-w-sm" />
+          <Button className="bg-yellow-600 hover:bg-yellow-700">S'inscrire</Button>
+        </div>
+      </section>
+
+      <section className="text-center">
+        <h2 className="text-2xl font-semibold mb-4">Paiement en ligne</h2>
+        <p className="mb-2">Paiement sécurisé disponible via Mobile Money, carte bancaire et PayPal.</p>
+        <Button className="bg-green-600 hover:bg-green-700">Payer maintenant</Button>
+      </section>
+
+      <section className="text-center">
+        <h2 className="text-2xl font-semibold mb-4">Témoignages</h2>
+        <div className="space-y-4 max-w-2xl mx-auto">
+          <p className="italic">“Un goût unique, parfait pour les grandes occasions !” — Arnaud</p>
+          <p className="italic">“Le whisky crème est tout simplement irrésistible.” — Clarisse</p>
+          <p className="italic">“Enfin un whisky local qui a du caractère !” — Rodrigue</p>
+        </div>
+      </section>
+
+      <footer className="text-center text-sm pt-8 border-t border-gray-700">
+        <p>Contact : vieedetoh24@gmail.com | +229 97 93 93 13 / 91 84 01 88</p>
+        <p>&copy; 2025 AHOUEVIÃ SOTO. Tous droits réservés.</p>
+      </footer>
+    </div>
+  );
+}
